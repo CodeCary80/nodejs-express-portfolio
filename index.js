@@ -39,7 +39,7 @@ app.use("/projects", require("./components/Project/route"));
 app.use("/skills", require("./components/Skill/route"));
 
 app.use(cors({
-  origin: ['http://localhost:3000', 
+  origin: ['http://localhost:8888', 
     'https://nodejs-express-portfolio.onrender.com',
   'process.env.FRONTEND_URL ||'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
