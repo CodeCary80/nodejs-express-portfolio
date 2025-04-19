@@ -39,7 +39,9 @@ app.use("/projects", require("./components/Project/route"));
 app.use("/skills", require("./components/Skill/route"));
 
 app.use(cors({
-  origin: ['http://localhost:3000', '*'],
+  origin: ['http://localhost:3000', 
+    'https://nodejs-express-portfolio.onrender.com',
+    '*'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
