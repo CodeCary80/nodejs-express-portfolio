@@ -1,0 +1,15 @@
+extends ../common/layout
+
+block layout-content 
+  .main-content 
+   .content-wrapper
+      h1.page-title.text-center My Portfolio 
+      .projects-grid 
+        each project in projects
+          .project-card
+            .project-content
+              img(src=project.img, alt=project.title)
+              h2.project-title
+                a(href=project.link) #{project.title}
+              p.project-description #{project.description}
+

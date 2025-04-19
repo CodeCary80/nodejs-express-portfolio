@@ -1,0 +1,43 @@
+extends ../common/layout
+
+block layout-content 
+  .admin-container.p-4
+    h1.text-2xl.mb-4 Skills Management
+    
+    // Add New Skills
+    form.skill-form.mb-8(action="/skills/add" method="POST")
+      h2.text-xl.mb-4 Add New Skill
+      .form-group.mb-4
+        label.block.mb-2(for="name") Skill Name
+        input#name.w-full.p-2.border.rounded(type="text" name="name" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="category") Category
+        select#category.w-full.p-2.border.rounded(name="category" required)
+          option(value="Frontend") Frontend
+          option(value="Backend") Backend
+          option(value="Database") Database
+          option(value="Tools") Tools
+      
+      .form-group.mb-4
+        label.block.mb-2(for="description") Description
+        textarea#description.w-full.p-2.border.rounded(name="description" rows="3" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="isHighlight") 
+          input#isHighlight(type="checkbox" name="isHighlight")
+          span.ml-2 Mark as Highlight Skill
+      
+      button.bg-blue-500.text-white.px-4.py-2.rounded(type="submit") Add Skill
+
+    // Curren Existing Skills
+    h2.text-xl.mb-4 Existing Skills
+    .skills-list
+      each skill in skills
+        .skill-item.border.p-4.mb-4.rounded
+          h3.text-lg.mb-2 #{skill.name}
+          p.mb-2 Category: #{skill.category}
+          p.mb-2 #{skill.description}
+          p.mb-2 Highlight: #{skill.isHighlight ? 'Yes' : 'No'}
+          form.inline(action=`/skills/delete/${skill._id}` method="POST")
+            button.bg-red-500.text-white.px-3.py-1.rounded(type="submit") Delete

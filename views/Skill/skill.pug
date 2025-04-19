@@ -1,0 +1,11 @@
+extends ../common/layout
+
+block layout-content 
+  .main-content 
+    h1.page-title My Skills
+    .skills-grid 
+      each skill in skills
+        .skill-card
+          h3.skill-name #{skill.name}
+          p.skill-category Category: #{skill.category}
+          p.skill-description Description: #{skill.description}

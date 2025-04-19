@@ -1,0 +1,44 @@
+extends ../common/layout
+
+block layout-content 
+  .admin-container.p-4
+    h1.text-2xl.mb-4 Project Management
+    
+    // Add New Projects
+    form.project-form.mb-8(action="/projects/add" method="POST")
+      h2.text-xl.mb-4 Add New Project
+      .form-group.mb-4
+        label.block.mb-2(for="title") Project Title
+        input#title.w-full.p-2.border.rounded(type="text" name="title" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="description") Description
+        textarea#description.w-full.p-2.border.rounded(name="description" rows="4" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="img") Image URL
+        input#img.w-full.p-2.border.rounded(type="text" name="img" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="link") Project Link
+        input#link.w-full.p-2.border.rounded(type="text" name="link" required)
+      
+      .form-group.mb-4
+        label.block.mb-2(for="technologies") Technologies
+        input#technologies.w-full.p-2.border.rounded(
+            type="text" 
+            name="technologies" 
+            placeholder="Comma-separated technologies"
+        )
+      
+      button.bg-blue-500.text-white.px-4.py-2.rounded(type="submit") Add Project
+
+    // Current existing Projects
+    h2.text-xl.mb-4 Existing Projects
+    .projects-list
+      each project in projects
+        .project-item.border.p-4.mb-4.rounded
+          h3.text-lg.mb-2 #{project.title}
+          p.mb-2 #{project.description}
+          form.inline(action=`/projects/delete/${project._id}` method="POST")
+            button.bg-red-500.text-white.px-3.py-1.rounded(type="submit") Delete

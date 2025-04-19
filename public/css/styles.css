@@ -1,0 +1,133 @@
+body {
+  color: #fff;
+  background-color: #222;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+#header {
+  text-align: center;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.project-card, .skill-card {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.project-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+button, .button {
+  background-color: yellow;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.delete {
+  background-color: #ff4444;
+  color: white;
+}
+
+form {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"], 
+textarea, 
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #444;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+h1, h2, h3 {
+  color: yellow;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.page-title {
+  color: yellow;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.projects-grid, .skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-description {
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+.skill-category {
+  color: #3E84B1;
+  line-height: 2;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+.skill-description {
+  color: #fff;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
