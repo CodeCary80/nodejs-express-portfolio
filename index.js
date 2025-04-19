@@ -40,7 +40,8 @@ app.use("/skills", require("./components/Skill/route"));
 
 app.use(cors({
   origin: ['http://localhost:3000', 
-    'https://nodejs-express-portfolio.onrender.com'],
+    'https://nodejs-express-portfolio.onrender.com',
+  'process.env.FRONTEND_URL ||'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
