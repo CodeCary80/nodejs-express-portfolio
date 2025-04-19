@@ -39,7 +39,7 @@ app.use("/projects", require("./components/Project/route"));
 app.use("/skills", require("./components/Skill/route"));
 
 app.use(cors({
-  origin: ['https://your-frontend-domain.vercel.app', 'http://localhost:3000'],
+  origin: ['http://localhost:3000', '*'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
