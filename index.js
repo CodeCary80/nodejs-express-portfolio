@@ -39,9 +39,19 @@ app.use("/projects", require("./components/Project/route"));
 app.use("/skills", require("./components/Skill/route"));
 
 app.use(cors({
-  origin: ['http://localhost:8888', 
-    'https://nodejs-express-portfolio.onrender.com',
-  'process.env.FRONTEND_URL ||'],
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:8888',
+      'https://nodejs-express-portfolio.onrender.com',
+    ];
+    
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS not allowed'), false);
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
