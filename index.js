@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path"); //needed when setting up static/file paths
 const sessions = require("express-session");
+const cors = require('cors');
 
 const dotenv = require("dotenv");
 
@@ -37,6 +38,11 @@ app.use(
 app.use("/projects", require("./components/Project/route"));
 app.use("/skills", require("./components/Skill/route"));
 
+app.use(cors({
+  origin: ['https://your-frontend-domain.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.get("/", (req, res) => {
   res.redirect("/projects");
