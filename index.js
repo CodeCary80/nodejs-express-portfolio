@@ -17,6 +17,7 @@ app.use(cors({
       'http://localhost:3000',
       'http://localhost:8888',
       'https://nodejs-express-portfolio.onrender.com',
+      'https://build-nu-two.vercel.app'  
     ];
     
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
