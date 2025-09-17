@@ -23,16 +23,16 @@ async function getProjects() {
 async function initializeProjects() {
     const projectList = [
       {
-        title: "Second Hand Record Web",
-        description: "A web application built with Node.js, Express, and Pug that showcases second-hand vinyl records. The site features a clean, minimalist design with dynamic page rendering, category-based navigation, and a search function. Users can explore various record listings, view product details, and browse through different sections like accessories and merchandise.",
-        img: "/img/record.png", 
-        link: "https://github.com/CodeCary80/http5222/tree/main/second_hand-e-commerce",
+        title: "Custom LMS Interface",
+        description: "Developed a comprehensive course management interface for an educational platform featuring custom course card layouts, advanced search functionality, and streamlined navigation systems.",
+        img: "/img/myplaceinthisworld.png", 
+        link: "https://myplaceinthisworld.ca/highschool-division/",
       },
       {
-        title: "Movie Archipelago",
-        description: "A responsive web application that helps users organize and track their movie-watching experience. It allows users to categorize movies into Favorites, Watched, and Wish List, rate and review them with a 5-star system, and add personal notes. The app features automatic sorting, customizable themes, and persistent local storage to keep user data intact.",
-        img: "/img/movie.png",  
-        link: "https://github.com/CodeCary80/http5122/tree/main/movie_Archipelago",
+        title: "Chillax Pack",
+        description: "A full-stack web application that generates personalized evening plans for Toronto residents by intelligently pairing restaurants with activities based on user preferences including budget, group size, energy level, and dining preferences. The platform features user authentication, favorites management, rating system, and a comprehensive admin dashboard for content management.",
+        img: "/img/chillaxpack.png",  
+        link: "https://github.com/CodeCary80/obviousplan",
         technologies: "H"
       },
       {
